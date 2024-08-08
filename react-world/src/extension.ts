@@ -14,12 +14,12 @@ export function activate(context: vscode.ExtensionContext) {
 
     let panel = vscode.window.createWebviewPanel("webview", "React", vscode.ViewColumn.One, {
             enableScripts: true
-    })
+    });
     
 
-    let scriptSrc = panel.webview.asWebviewUri(vscode.Uri.joinPath(context.extensionUri, "jbrowse-chat", "dist", "index.js"))
+    let scriptSrc = panel.webview.asWebviewUri(vscode.Uri.joinPath(context.extensionUri, "jbrowse-chat", "dist", "index.js"));
 
-    let cssSrc = panel.webview.asWebviewUri(vscode.Uri.joinPath(context.extensionUri, "jbrowse-chat", "dist", "index.css"))
+    let cssSrc = panel.webview.asWebviewUri(vscode.Uri.joinPath(context.extensionUri, "jbrowse-chat", "dist", "index.css"));
 
     panel.webview.html = `<!DOCTYPE html>
     <html lang="en">
@@ -32,7 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
         <script src="${scriptSrc}"></script>
       </body>
     </html>
-    `
+    `;
 });
 
     context.subscriptions.push(webview);
